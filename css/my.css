@@ -1,1 +1,121 @@
-/* Here is your custom css styles. */
+/* Project-level refinements for the generated Hexo pages. */
+
+:root {
+    --site-accent: #26a69a;
+    --site-ink: #263238;
+    --site-muted: #607d8b;
+    --site-soft: #f5f7fb;
+}
+
+.card-content,
+.article-card-content,
+.copy-right,
+.friend-name,
+.info-desc {
+    overflow-wrap: anywhere;
+}
+
+.page-section {
+    margin: 0 auto 28px;
+}
+
+.placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.placeholder-card {
+    height: 100%;
+    padding: 22px;
+    border-left: 4px solid var(--site-accent);
+    background: #fff;
+}
+
+.placeholder-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    color: var(--site-ink);
+}
+
+.placeholder-card p,
+.empty-state p,
+.contact-panel p {
+    margin: 0;
+    color: var(--site-muted);
+    line-height: 1.8;
+}
+
+.empty-state {
+    padding: 34px 24px;
+    text-align: center;
+    background: var(--site-soft);
+    border-radius: 6px;
+}
+
+.empty-state .fas,
+.empty-state .far {
+    margin-bottom: 12px;
+    color: var(--site-accent);
+    font-size: 2rem;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.contact-actions .btn {
+    border-radius: 4px;
+}
+
+.taxonomy-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.taxonomy-list .chip {
+    margin: 0;
+}
+
+.friend-div .card {
+    min-height: 235px;
+}
+
+.friend-name {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+}
+
+.frind-ship p {
+    min-height: 48px;
+    line-height: 1.55;
+}
+
+@media only screen and (max-width: 992px) {
+    .placeholder-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .placeholder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .contact-actions .btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dai-GoGo 技术笔记</title>
+  <link href="https://dai-gogo.github.io/atom.xml" rel="self"/>
+  <link href="https://dai-gogo.github.io/"/>
+  <updated>2026-07-02T00:00:00Z</updated>
+  <id>https://dai-gogo.github.io/</id>
+  <author>
+    <name>Dai-GoGo</name>
+  </author>
+  <subtitle>记录工程实践、架构思考与问题复盘。</subtitle>
+</feed>

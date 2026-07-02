@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<search>
+  <entry>
+    <title>首页</title>
+    <url>/</url>
+    <content>记录工程实践、架构思考与问题复盘。 架构设计 工程实践 问题复盘</content>
+  </entry>
+  <entry>
+    <title>关于</title>
+    <url>/about/</url>
+    <content>关于 Dai-GoGo 技术方向 架构 工程实践</content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/</url>
+    <content>架构设计 工程实践 问题复盘</content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/</url>
+    <content>Hexo GitHub Pages JavaScript Architecture</content>
+  </entry>
+  <entry>
+    <title>归档</title>
+    <url>/archives/</url>
+    <content>文章归档 时间线 技术笔记</content>
+  </entry>
+  <entry>
+    <title>留言板</title>
+    <url>/contact/</url>
+    <content>GitHub Issues 反馈 联系 留言</content>
+  </entry>
+</search>
