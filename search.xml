@@ -3,7 +3,22 @@
   <entry>
     <title>首页</title>
     <url>/</url>
-    <content>记录工程实践、架构思考与问题复盘。 架构设计 工程实践 问题复盘</content>
+    <content>记录工程实践、架构思考与问题复盘。</content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/</url>
+    <content>架构设计 工程实践 问题复盘 资料沉淀</content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/</url>
+    <content>Architecture Modularity Delivery GitHub Pages Static Site Deployment Review SRE Operations</content>
+  </entry>
+  <entry>
+    <title>归档</title>
+    <url>/archives/</url>
+    <content>系统边界如何影响交付速度 把 GitHub Pages 做成可维护的静态发布链路 一次故障复盘模板应该保留什么信息</content>
   </entry>
   <entry>
     <title>关于</title>
@@ -11,23 +26,23 @@
     <content>关于 Dai-GoGo 技术方向 架构 工程实践</content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/categories/</url>
-    <content>架构设计 工程实践 问题复盘</content>
-  </entry>
-  <entry>
-    <title>标签</title>
-    <url>/tags/</url>
-    <content>Hexo GitHub Pages JavaScript Architecture</content>
-  </entry>
-  <entry>
-    <title>归档</title>
-    <url>/archives/</url>
-    <content>文章归档 时间线 技术笔记</content>
-  </entry>
-  <entry>
     <title>留言板</title>
     <url>/contact/</url>
-    <content>GitHub Issues 反馈 联系 留言</content>
+    <content>GitHub Issues 反馈 留言 联系</content>
+  </entry>
+  <entry>
+    <title>系统边界如何影响交付速度</title>
+    <url>/posts/system-boundaries/</url>
+    <content>把模块边界、接口契约和团队协作放在同一张图里，能更快看见系统为什么变慢。 架构设计 Architecture Modularity Delivery</content>
+  </entry>
+  <entry>
+    <title>把 GitHub Pages 做成可维护的静态发布链路</title>
+    <url>/posts/github-pages-hardening/</url>
+    <content>静态博客也需要发布纪律：目录 URL、搜索索引、站点地图和 404 页都属于基础设施。 工程实践 GitHub Pages Static Site Deployment</content>
+  </entry>
+  <entry>
+    <title>一次故障复盘模板应该保留什么信息</title>
+    <url>/posts/incident-review-template/</url>
+    <content>好的复盘不是追责文档，而是让下一次排查更快、影响更小、决策更清楚。 问题复盘 Review SRE Operations</content>
   </entry>
 </search>

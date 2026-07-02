@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Dai-GoGo, 技术博客, 架构设计, 工程实践, 问题复盘">
-    <meta name="description" content="反馈问题、提出选题或联系站点维护者。">
-    <link rel="canonical" href="https://dai-gogo.github.io/contact/">
-    <title>留言板 | Dai-GoGo 技术笔记</title>
+    <meta name="description" content="把模块边界、接口契约和团队协作放在同一张图里，能更快看见系统为什么变慢。">
+    <link rel="canonical" href="https://dai-gogo.github.io/posts/system-boundaries/">
+    <title>系统边界如何影响交付速度 | Dai-GoGo 技术笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/css/cantor-blog.css">
     <script src="/js/cantor-blog.js" defer></script>
@@ -66,37 +66,43 @@
     </section>
 
     <main>
-      
-    <section class="page-hero">
-      <div class="page-hero-inner">
-        <div>
-          <p class="eyebrow" data-reveal>Contact</p>
-          <h1 data-reveal>留言板</h1>
+      <article>
+        <header class="article-header">
+          <p class="eyebrow" data-reveal>架构设计 / 2026-07-02</p>
+          <h1 data-reveal>系统边界如何影响交付速度</h1>
+          <p data-reveal>把模块边界、接口契约和团队协作放在同一张图里，能更快看见系统为什么变慢。</p>
+        </header>
+        <div class="article-body">
+          <div class="article-layout">
+            <div class="article-content">
+              <h2 id="问题">问题</h2><p>很多交付问题并不是编码速度不够，而是边界没有被明确表达。一个模块既承担业务规则，又承担数据适配，还顺手暴露给多个调用方时，后续每一次修改都会变成跨域协调。</p>
+<h2 id="判断边界的三个信号">判断边界的三个信号</h2><p>第一，看变化原因是否一致；第二，看接口是否能用业务语言解释；第三，看故障影响是否能被限制在一个可理解的范围内。只要其中两个信号长期混乱，就应该重新讨论边界。</p>
+<h2 id="落地方式">落地方式</h2><p>不要从大重构开始。先用 ADR 记录当前边界假设，再为高频调用链补契约测试，最后把跨模块的数据结构改成显式 DTO。边界不是图画出来就结束，它需要被测试、日志和发布流程共同保护。</p>
+            </div>
+            <aside class="article-panel">
+              <h3>文章导航</h3>
+              <a href="#问题">问题</a><a href="#判断边界的三个信号">判断边界的三个信号</a><a href="#落地方式">落地方式</a>
+              <a href="/archives/">返回归档</a>
+            </aside>
+          </div>
         </div>
-        <p data-reveal>评论系统接入前，先使用 GitHub Issues 作为可靠反馈入口。</p>
+      </article>
+      
+    <section class="cta">
+      <svg class="cta-lines" viewBox="0 0 1200 560" aria-hidden="true">
+        <path d="M-30 170H240C255 170 265 180 265 195V295C265 310 275 320 290 320H570C585 320 595 330 595 345V455C595 470 605 480 620 480H1230"></path>
+        <path d="M-30 240H180C195 240 205 250 205 265V400C205 415 215 425 230 425H455C470 425 480 415 480 400V255C480 240 490 230 505 230H800C815 230 825 240 825 255V340C825 355 835 365 850 365H1230"></path>
+        <path class="pulse" d="M-30 170H240C255 170 265 180 265 195V295C265 310 275 320 290 320H570C585 320 595 330 595 345V455C595 470 605 480 620 480H1230"></path>
+      </svg>
+      <div class="cta-content" data-reveal>
+        <p class="eyebrow blue">Build the writing system</p>
+        <h2>把经验整理成下一次可以复用的答案。</h2>
+        <a class="button button-blue" href="/archives/">
+    <span>查看归档</span>
+    <span class="arrow-box"></span>
+  </a>
       </div>
     </section>
-      <section class="section section-white">
-        <div class="section-grid">
-          <div data-reveal>
-            <p class="eyebrow blue">Feedback loop</p>
-            <div class="section-heading" style="display:block;margin:0;"><h2>有问题、建议或选题，可以直接开 Issue。</h2></div>
-          </div>
-          <div class="section-copy" data-reveal>
-            GitHub Issues 比临时留言插件更适合当前阶段：可追踪、可关闭、可关联代码改动。后续如果需要，再接入评论系统或邮件订阅。
-            <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
-              <a class="button button-blue" href="https://github.com/Dai-GoGo/Dai-GoGo.github.io/issues/new">
-    <span>创建 Issue</span>
-    <span class="arrow-box"></span>
-  </a>
-              <a class="button " href="https://github.com/Dai-GoGo/Dai-GoGo.github.io">
-    <span>查看源码</span>
-    <span class="arrow-box"></span>
-  </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">

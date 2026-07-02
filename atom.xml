@@ -5,8 +5,27 @@
   <link href="https://dai-gogo.github.io/"/>
   <updated>2026-07-02T00:00:00Z</updated>
   <id>https://dai-gogo.github.io/</id>
-  <author>
-    <name>Dai-GoGo</name>
-  </author>
+  <author><name>Dai-GoGo</name></author>
   <subtitle>记录工程实践、架构思考与问题复盘。</subtitle>
+  <entry>
+    <title>系统边界如何影响交付速度</title>
+    <link href="https://dai-gogo.github.io/posts/system-boundaries/"/>
+    <id>https://dai-gogo.github.io/posts/system-boundaries/</id>
+    <updated>2026-07-02T00:00:00Z</updated>
+    <summary>把模块边界、接口契约和团队协作放在同一张图里，能更快看见系统为什么变慢。</summary>
+  </entry>
+  <entry>
+    <title>把 GitHub Pages 做成可维护的静态发布链路</title>
+    <link href="https://dai-gogo.github.io/posts/github-pages-hardening/"/>
+    <id>https://dai-gogo.github.io/posts/github-pages-hardening/</id>
+    <updated>2026-07-02T00:00:00Z</updated>
+    <summary>静态博客也需要发布纪律：目录 URL、搜索索引、站点地图和 404 页都属于基础设施。</summary>
+  </entry>
+  <entry>
+    <title>一次故障复盘模板应该保留什么信息</title>
+    <link href="https://dai-gogo.github.io/posts/incident-review-template/"/>
+    <id>https://dai-gogo.github.io/posts/incident-review-template/</id>
+    <updated>2026-07-02T00:00:00Z</updated>
+    <summary>好的复盘不是追责文档，而是让下一次排查更快、影响更小、决策更清楚。</summary>
+  </entry>
 </feed>

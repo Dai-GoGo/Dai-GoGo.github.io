@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Dai-GoGo, 技术博客, 架构设计, 工程实践, 问题复盘">
-    <meta name="description" content="反馈问题、提出选题或联系站点维护者。">
-    <link rel="canonical" href="https://dai-gogo.github.io/contact/">
-    <title>留言板 | Dai-GoGo 技术笔记</title>
+    <meta name="description" content="静态博客也需要发布纪律：目录 URL、搜索索引、站点地图和 404 页都属于基础设施。">
+    <link rel="canonical" href="https://dai-gogo.github.io/posts/github-pages-hardening/">
+    <title>把 GitHub Pages 做成可维护的静态发布链路 | Dai-GoGo 技术笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/css/cantor-blog.css">
     <script src="/js/cantor-blog.js" defer></script>
@@ -66,37 +66,43 @@
     </section>
 
     <main>
-      
-    <section class="page-hero">
-      <div class="page-hero-inner">
-        <div>
-          <p class="eyebrow" data-reveal>Contact</p>
-          <h1 data-reveal>留言板</h1>
+      <article>
+        <header class="article-header">
+          <p class="eyebrow" data-reveal>工程实践 / 2026-07-02</p>
+          <h1 data-reveal>把 GitHub Pages 做成可维护的静态发布链路</h1>
+          <p data-reveal>静态博客也需要发布纪律：目录 URL、搜索索引、站点地图和 404 页都属于基础设施。</p>
+        </header>
+        <div class="article-body">
+          <div class="article-layout">
+            <div class="article-content">
+              <h2 id="为什么静态站也需要工程化">为什么静态站也需要工程化</h2><p>GitHub Pages 很容易上线，但容易被误解为只要有 HTML 就够了。真正稳定的静态站需要处理目录页、相对路径、搜索索引、RSS、站点地图和本地预览一致性。</p>
+<h2 id="最小发布清单">最小发布清单</h2><p>根目录保留 .nojekyll，避免 GitHub Pages 忽略下划线资源；所有目录链接使用尾斜杠；本地预览服务器要支持 /about 自动回落到 /about/index.html；搜索索引和 sitemap 在每次内容变更后同步生成。</p>
+<h2 id="后续演进">后续演进</h2><p>当文章数量增加后，可以把当前脚本升级为完整的内容构建器：Markdown 输入、模板输出、自动生成标签页和归档页。这样既保持静态站的轻量，也避免手写 HTML 的重复劳动。</p>
+            </div>
+            <aside class="article-panel">
+              <h3>文章导航</h3>
+              <a href="#为什么静态站也需要工程化">为什么静态站也需要工程化</a><a href="#最小发布清单">最小发布清单</a><a href="#后续演进">后续演进</a>
+              <a href="/archives/">返回归档</a>
+            </aside>
+          </div>
         </div>
-        <p data-reveal>评论系统接入前，先使用 GitHub Issues 作为可靠反馈入口。</p>
+      </article>
+      
+    <section class="cta">
+      <svg class="cta-lines" viewBox="0 0 1200 560" aria-hidden="true">
+        <path d="M-30 170H240C255 170 265 180 265 195V295C265 310 275 320 290 320H570C585 320 595 330 595 345V455C595 470 605 480 620 480H1230"></path>
+        <path d="M-30 240H180C195 240 205 250 205 265V400C205 415 215 425 230 425H455C470 425 480 415 480 400V255C480 240 490 230 505 230H800C815 230 825 240 825 255V340C825 355 835 365 850 365H1230"></path>
+        <path class="pulse" d="M-30 170H240C255 170 265 180 265 195V295C265 310 275 320 290 320H570C585 320 595 330 595 345V455C595 470 605 480 620 480H1230"></path>
+      </svg>
+      <div class="cta-content" data-reveal>
+        <p class="eyebrow blue">Build the writing system</p>
+        <h2>把经验整理成下一次可以复用的答案。</h2>
+        <a class="button button-blue" href="/archives/">
+    <span>查看归档</span>
+    <span class="arrow-box"></span>
+  </a>
       </div>
     </section>
-      <section class="section section-white">
-        <div class="section-grid">
-          <div data-reveal>
-            <p class="eyebrow blue">Feedback loop</p>
-            <div class="section-heading" style="display:block;margin:0;"><h2>有问题、建议或选题，可以直接开 Issue。</h2></div>
-          </div>
-          <div class="section-copy" data-reveal>
-            GitHub Issues 比临时留言插件更适合当前阶段：可追踪、可关闭、可关联代码改动。后续如果需要，再接入评论系统或邮件订阅。
-            <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
-              <a class="button button-blue" href="https://github.com/Dai-GoGo/Dai-GoGo.github.io/issues/new">
-    <span>创建 Issue</span>
-    <span class="arrow-box"></span>
-  </a>
-              <a class="button " href="https://github.com/Dai-GoGo/Dai-GoGo.github.io">
-    <span>查看源码</span>
-    <span class="arrow-box"></span>
-  </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
