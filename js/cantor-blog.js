@@ -143,11 +143,18 @@ function initNetworkCanvas() {
   if (!canvas) return;
 
   const context = canvas.getContext("2d", { alpha: true });
+  if (!context) return;
   let width = 0;
   let height = 0;
   let dpr = 1;
   let points = [];
   let frame = 0;
+  let frameHandle = 0;
+  let lastPaint = 0;
+  let running = false;
+  let visible = !document.hidden;
+  const lowPowerDevice = window.innerWidth < 760 || Number(navigator.hardwareConcurrency || 8) <= 4 || Number(navigator.deviceMemory || 8) <= 4;
+  const frameInterval = 1000 / (lowPowerDevice ? 24 : 30);
   const pointer = { x: -9999, y: -9999, active: false };
 
   function resize() {
@@ -159,7 +166,7 @@ function initNetworkCanvas() {
     canvas.height = Math.max(1, Math.floor(height * dpr));
     context.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    const count = width < 760 ? 54 : 92;
+    const count = width < 760 ? 42 : (lowPowerDevice ? 62 : 76);
     points = Array.from({ length: count }, (_, index) => ({
       x: (index % 14) / 13,
       y: Math.floor(index / 14) / Math.max(1, Math.floor(count / 14)),
@@ -170,10 +177,10 @@ function initNetworkCanvas() {
 
   function draw(time) {
     context.clearRect(0, 0, width, height);
-    context.fillStyle = "#044ab3";
+    context.fillStyle = "rgba(18, 57, 126, .72)";
     context.fillRect(0, 0, width, height);
 
-    frame += reduceMotion ? 0 : 0.002;
+    frame += reduceMotion ? 0 : 0.012;
     const projected = points.map((point, index) => {
       const wave = Math.sin(time * 0.00045 + point.phase + frame) * 22;
       let x = width * (0.12 + point.x * 0.78) + Math.cos(index) * 10;
@@ -218,7 +225,27 @@ function initNetworkCanvas() {
       context.fillText(label, point.x + 10, point.y - 10);
     });
 
-    requestAnimationFrame(draw);
+  }
+
+  function stop() {
+    running = false;
+    cancelAnimationFrame(frameHandle);
+    frameHandle = 0;
+  }
+
+  function tick(time) {
+    if (!running) return;
+    frameHandle = requestAnimationFrame(tick);
+    if (time - lastPaint < frameInterval) return;
+    lastPaint = time;
+    draw(time);
+  }
+
+  function start() {
+    if (reduceMotion || !visible || running) return;
+    running = true;
+    lastPaint = performance.now() - frameInterval;
+    frameHandle = requestAnimationFrame(tick);
   }
 
   canvas.addEventListener("pointermove", (event) => {
@@ -234,7 +261,17 @@ function initNetworkCanvas() {
 
   resize();
   window.addEventListener("resize", resize);
-  requestAnimationFrame(draw);
+  document.addEventListener("visibilitychange", () => {
+    visible = !document.hidden;
+    if (visible) {
+      draw(performance.now());
+      start();
+    } else {
+      stop();
+    }
+  });
+  draw(0);
+  start();
 }
 
 initNetworkCanvas();
