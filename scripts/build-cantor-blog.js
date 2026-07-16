@@ -119,7 +119,7 @@ function header() {
       <div class="header-actions">
         <button class="icon-button" type="button" data-search-open aria-label="打开搜索">⌕</button>
         <a class="button" href="${site.repo}" target="_blank" rel="noopener noreferrer">
-          <span>Source</span>
+          <span>Star on GitHub <strong class="repo-star-count" data-star-count aria-live="polite"></strong></span>
           <span class="arrow-box"></span>
         </a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false">
@@ -173,10 +173,22 @@ function layout({ title, description = site.description, body, pathName = '/' })
     <meta name="keywords" content="Dai-GoGo, 技术博客, 架构设计, 工程实践, 问题复盘">
     <meta name="description" content="${description}">
     <link rel="canonical" href="${absolute(pathName)}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="${site.name}">
+    <meta property="og:title" content="${title} | ${site.name}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:url" content="${absolute(pathName)}">
+    <meta property="og:image" content="${site.url}/medias/social-preview-moon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title} | ${site.name}">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="${site.url}/medias/social-preview-moon.png">
     <title>${title} | ${site.name}</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/css/cantor-blog.css">
     <script src="/js/cantor-blog.js" defer></script>
+    <script src="/js/cosmic.js" defer></script>
+    <script src="/js/galaxy.js" defer></script>
   </head>
   <body class="blog-shell">
 ${header()}
@@ -242,6 +254,9 @@ function homePage() {
     <main>
       <section class="hero">
         <canvas class="network-canvas" data-network-canvas></canvas>
+        <div class="cosmic-orbit cosmic-orbit-one" aria-hidden="true"></div>
+        <div class="cosmic-orbit cosmic-orbit-two" aria-hidden="true"></div>
+        <div class="hero-moon" aria-hidden="true"><span></span></div>
         <div class="hero-inner">
           <div class="hero-copy">
             <p class="eyebrow" data-reveal>Architecture / Engineering / Review</p>
@@ -274,6 +289,23 @@ function homePage() {
           </div>
           <div class="section-copy" data-reveal>
             技术博客最有价值的部分，不是“我今天做了什么”，而是“为什么这样做、后来证明哪里对、哪里错”。本站围绕三条线写作：架构边界、工程实践、问题复盘。
+          </div>
+        </div>
+      </section>
+
+      <section class="section mission-section">
+        <div class="mission-grid">
+          <div class="mission-copy" data-reveal>
+            <p class="eyebrow">signal / orbit / open source</p>
+            <h2>每一颗 Star，都是下一次继续探索的信号。</h2>
+            <p>让真实的工程判断成为可以抵达、可以复用的坐标。移动鼠标，观察轨道对光的回应。</p>
+            <a class="button button-blue" href="${site.repo}" target="_blank" rel="noopener noreferrer"><span>探索开源轨道</span><span class="arrow-box"></span></a>
+          </div>
+          <div class="signal-dial" data-reveal data-signal-dial aria-label="互动星图">
+            <span class="dial-ring dial-ring-one"></span>
+            <span class="dial-ring dial-ring-two"></span>
+            <button class="signal-core" type="button" data-signal-button aria-pressed="false">点亮信号</button>
+            <p data-signal-status>移动指针，寻找轨道中的微光。</p>
           </div>
         </div>
       </section>
