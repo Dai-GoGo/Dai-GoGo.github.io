@@ -6,10 +6,21 @@
     <meta name="keywords" content="Dai-GoGo, 技术博客, 架构设计, 工程实践, 问题复盘">
     <meta name="description" content="记录工程实践、架构思考与问题复盘。">
     <link rel="canonical" href="https://dai-gogo.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dai-GoGo 技术笔记">
+    <meta property="og:title" content="Dai-GoGo 技术笔记">
+    <meta property="og:description" content="记录工程实践、架构思考与问题复盘。">
+    <meta property="og:url" content="https://dai-gogo.github.io/">
+    <meta property="og:image" content="https://dai-gogo.github.io/medias/social-preview-moon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dai-GoGo 技术笔记">
+    <meta name="twitter:description" content="记录工程实践、架构思考与问题复盘。">
+    <meta name="twitter:image" content="https://dai-gogo.github.io/medias/social-preview-moon.png">
     <title>首页 | Dai-GoGo 技术笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/css/cantor-blog.css">
     <script src="/js/cantor-blog.js" defer></script>
+    <script src="/js/cosmic.js" defer></script>
   </head>
   <body class="blog-shell">
 
@@ -68,6 +79,9 @@
     <main>
       <section class="hero">
         <canvas class="network-canvas" data-network-canvas></canvas>
+        <div class="cosmic-orbit cosmic-orbit-one" aria-hidden="true"></div>
+        <div class="cosmic-orbit cosmic-orbit-two" aria-hidden="true"></div>
+        <div class="hero-moon" aria-hidden="true"><span></span></div>
         <div class="hero-inner">
           <div class="hero-copy">
             <p class="eyebrow" data-reveal>Architecture / Engineering / Review</p>
@@ -77,7 +91,12 @@
               <a class="button " href="/archives/">
     <span>阅读最新文章</span>
     <span class="arrow-box"></span>
-  </a>
+              </a>
+              <a class="star-link" href="https://github.com/Dai-GoGo/Dai-GoGo.github.io" target="_blank" rel="noopener noreferrer" data-star-link>
+                <span class="star-symbol" aria-hidden="true">✦</span>
+                <span>在 GitHub 留下一颗 Star</span>
+                <strong data-star-count aria-live="polite">加载中</strong>
+              </a>
             </div>
           </div>
           <aside class="hero-console" data-reveal>
@@ -111,6 +130,25 @@
           </div>
           <div class="section-copy" data-reveal>
             技术博客最有价值的部分，不是“我今天做了什么”，而是“为什么这样做、后来证明哪里对、哪里错”。本站围绕三条线写作：架构边界、工程实践、问题复盘。
+          </div>
+        </div>
+      </section>
+
+      <section class="section mission-section">
+        <div class="mission-grid">
+          <div class="mission-copy" data-reveal>
+            <p class="eyebrow">signal / orbit / open source</p>
+            <h2>每一颗 Star，都是一次继续写下去的信号。</h2>
+            <p>这里公开记录真正做过的工程判断。若某篇笔记帮到了你，Star、Issue 或留言都会成为下一次复盘的燃料。</p>
+            <a class="button button-blue" href="https://github.com/Dai-GoGo/Dai-GoGo.github.io" target="_blank" rel="noopener noreferrer">
+              <span>浏览代码与笔记</span><span class="arrow-box"></span>
+            </a>
+          </div>
+          <div class="signal-dial" data-reveal data-signal-dial aria-label="互动星图">
+            <span class="dial-ring dial-ring-one"></span>
+            <span class="dial-ring dial-ring-two"></span>
+            <button class="signal-core" type="button" data-signal-button aria-pressed="false">点亮信号</button>
+            <p data-signal-status>移动指针，寻找轨道中的微光。</p>
           </div>
         </div>
       </section>

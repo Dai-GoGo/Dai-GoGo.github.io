@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/css/cantor-blog.css">
     <script src="/js/cantor-blog.js" defer></script>
+    <script src="/js/cosmic.js" defer></script>
   </head>
   <body class="blog-shell">
 
@@ -95,6 +96,29 @@
   </a>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="section guestbook-section">
+        <div class="guestbook-head" data-reveal>
+          <div>
+            <p class="eyebrow">Guestbook / public signal</p>
+            <h2>在这里留下你的信号。</h2>
+          </div>
+          <p>留言会以 GitHub Issue 的方式保存，便于追踪、回复和长期保留。首次留言时，GitHub 会要求登录。</p>
+        </div>
+        <div class="guestbook-shell" data-reveal>
+          <div class="guestbook-fallback">
+            <strong>留言板正在连接 GitHub</strong>
+            <p>如果没有加载出来，也可以直接创建一条反馈 Issue。</p>
+            <a href="https://github.com/Dai-GoGo/Dai-GoGo.github.io/issues/new" target="_blank" rel="noopener noreferrer">前往 GitHub 留言 ↗</a>
+          </div>
+          <script src="https://utteranc.es/client.js"
+            repo="Dai-GoGo/Dai-GoGo.github.io"
+            issue-term="pathname"
+            label="guestbook"
+            theme="github-dark"
+            crossorigin="anonymous"
+            async></script>
         </div>
       </section>
     </main>
